@@ -1,15 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <the-header
+      :link="link"
+      :count="count"
+      @inc_value="count++"
+  ></the-header>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/TheHeader.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    'the-header': Header
+  },
+  data() {
+    return {
+      link: 'Some link',
+      count: 0
+    }
   }
 }
 </script>
